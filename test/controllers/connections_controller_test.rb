@@ -20,6 +20,11 @@ class ConnectionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should not update connection because of invalid id" do
+    patch connection_url(@connection), params: { connection: { follower_id: @connection.follower_id, following_id: 0 } }, as: :json
+    assert_response :unprocessable_entity
+  end
+
   test "should destroy connection" do
     assert_difference("Connection.count", -1) do
       delete connection_url(@connection), as: :json

@@ -17,7 +17,7 @@ class SleepsController < ApplicationController
   def create
     @sleep = Sleep.new(sleep_params)
 
-    if @sleep.save
+    if @sleep&.save
       render json: @sleep, status: :created, location: @sleep
     else
       render json: @sleep.errors, status: :unprocessable_entity
