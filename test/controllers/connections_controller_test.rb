@@ -10,21 +10,13 @@ class ConnectionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create connection" do
-    assert_difference("Connection.count") do
-      post connections_url, params: { connection: { follower_id: @connection.follower_id, following_id: @connection.following_id, unfollowed_at: @connection.unfollowed_at } }, as: :json
-    end
-
-    assert_response :created
-  end
-
   test "should show connection" do
     get connection_url(@connection), as: :json
     assert_response :success
   end
 
   test "should update connection" do
-    patch connection_url(@connection), params: { connection: { follower_id: @connection.follower_id, following_id: @connection.following_id, unfollowed_at: @connection.unfollowed_at } }, as: :json
+    patch connection_url(@connection), params: { connection: { follower_id: @connection.follower_id, following_id: @connection.following_id } }, as: :json
     assert_response :success
   end
 

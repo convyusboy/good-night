@@ -12,7 +12,7 @@ class SleepsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create sleep" do
     assert_difference("Sleep.count") do
-      post sleeps_url, params: { sleep: { duration: @sleep.duration, ended_at: @sleep.ended_at, user_id: @sleep.user_id } }, as: :json
+      post sleeps_url, params: { sleep: { ended_at: @sleep.ended_at, user_id: @sleep.user_id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class SleepsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update sleep" do
-    patch sleep_url(@sleep), params: { sleep: { duration: @sleep.duration, ended_at: @sleep.ended_at, user_id: @sleep.user_id } }, as: :json
+    patch sleep_url(@sleep), params: { sleep: { ended_at: @sleep.ended_at, user_id: @sleep.user_id } }, as: :json
     assert_response :success
   end
 
