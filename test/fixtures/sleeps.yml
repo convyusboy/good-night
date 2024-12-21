@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ended_at: 2024-12-21 08:53:12
+  user: one
+  duration: 1
+
+two:
+  ended_at: 2024-12-21 08:53:12
+  user: two
+  duration: 1
